@@ -17,22 +17,37 @@ This combination allows us to:
 
 ## Workshop
 
+### What are the results we do expect?
+
+- Sharing a way of leveraging design recipes and Domain Driven Design (DDD) with `clojure.spec`.
+<!-- Generación automatica datos de prueba para la ejercitación de funciones. -->
+- Exercising functions using data generation based on the spec.
+<!-- Detección de inconsistencias lógicas intra-entitarias e inter-entitarias del modelo durante el proceso de especificación de datos, evitando la propagación de errores. -->
+- Detecting the logical incoherences inter/between entities from the model, during the specification process. It mitigates the errors propagation. 
+<!-- Enforcing automático de las propiedades de las entidades durante el proceso de especificación. _(Las entidades son descriptas a través del modelo de datos.)_ -->
+-  Enforcing the entities' properties automatically, during the specification process.
+<!-- Verificación exhaustiva de parámetros inferidos pero no explicitados. Ej.: trx vs. ride-cost. -->
+- Verifying comprehensively the inferring but not explicit entities' properties.
+<!-- Evidencia relaciones implicitas entre entidades (ride-cost, trx) evitando la propagación de erroes que solo se detectan en la puesta en producción/staging. -->
+- Revealing the entities' implicit relationships, which prevents the error propagation.
+
 ### Toolbox
 
-| Tools   | Version  | Installation                                   |
-| --:     | :------: | ------------                                   |
-| clojure | 1.10.1   | [docs][clojure-tool]                           |
-| clj     | 1.10.1   | [docs][clojure-tool]                           |
-| Emacs   | 26.1     | [Bear Emacs][bear-emacs], [Spacemac][spacemac] |
+| Tools   | Version  | Installation                    |
+| --:     | :------: | ----------------                |
+| clojure | 1.10.1   | [Clojure docs][clojure-version] |
+| IDE     | dna      | [Clojure tools][clojure-tool]   |
+
 
 ## Misc
 
 ### Helpful links
 
-[What are the Clojure Tools?](https://betweentwoparens.com/what-are-the-clojure-tools)
+[What are the Clojure Tools (clojure, clj, etc.)?](https://betweentwoparens.com/what-are-the-clojure-tools)
 
 [htdp]: https://htdp.org/
 [fsharpfor]: https://fsharpforfunandprofit.com/books/
 [bear-emacs]: https://www.gnu.org/software/emacs/download.html
 [spacemac]: https://www.spacemacs.org/
-[clojure-tool]: https://clojure.org/guides/getting_started
+[clojure-version]: https://clojure.org/guides/getting_started
+[clojure-tool]: https://clojure.org/community/tools
