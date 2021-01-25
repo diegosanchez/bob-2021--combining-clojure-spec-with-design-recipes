@@ -17,19 +17,19 @@ This combination allows us to:
 
 ## Workshop
 
-### What are the results we do expect?
+### Perceived benefits of adopting property-based specification and testing (for us :)
 
-- Sharing a way of leveraging design recipes and Domain Driven Design (DDD) with `clojure.spec`.
-<!-- Generación automatica datos de prueba para la ejercitación de funciones. -->
-- Exercising functions using data generation based on the spec.
-<!-- Detección de inconsistencias lógicas intra-entitarias e inter-entitarias del modelo durante el proceso de especificación de datos, evitando la propagación de errores. -->
-- Detecting the logical incoherences inter/between entities from the model, during the specification process. It mitigates the errors propagation. 
-<!-- Enforcing automático de las propiedades de las entidades durante el proceso de especificación. _(Las entidades son descriptas a través del modelo de datos.)_ -->
--  Enforcing the entities' properties automatically, during the specification process.
-<!-- Verificación exhaustiva de parámetros inferidos pero no explicitados. Ej.: trx vs. ride-cost. -->
-- Verifying comprehensively the inferring but not explicit entities' properties.
-<!-- Evidencia relaciones implicitas entre entidades (ride-cost, trx) evitando la propagación de erroes que solo se detectan en la puesta en producción/staging. -->
-- Revealing the entities' implicit relationships, which prevents the error propagation.
+In general, we were able to improve the quality of our feedback loop. It could start sooner (at the data specification stage), and we could get new explicit, specific and actionable feedback. All this results in less error propagation to later stages in the development process. 
+
+In some cases, the errors prevented in this way would normally be detected only after the system has gone into staging/production.
+
+More specifically:
+
+- Automatic Generation of Test Data for excercising Functions during development.
+- Detection of underlying Logical Inconsitencies and Incoherences within our Model (both within and across its Entities) *during the data specification step*.
+-  Automatic Enforcing of properties (not only of the Entities, but also of the Data Model) *during the specification process.*
+- Comprehensive Verification of inferred-but-not-explicitated properties of the Entities. This can also result in the revelation of implicit relationships across Entities that would normally be detected only after the system has gone into staging/production.__(E.g.: trx vs. ride-cost.)_
+
 
 ### Toolbox
 
