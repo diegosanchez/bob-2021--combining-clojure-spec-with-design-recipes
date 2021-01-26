@@ -17,6 +17,17 @@ This combination allows us to:
 
 ## Workshop
 
+### Concepts to be explored during the activity
+
+- How to design programs
+  - Recipes
+- Domain driven design (DDD)
+  - Core domain (ex.: card, trx., overdraft, etc)
+  - Application services (ex.: pay ride with the prepaid card)
+  - Delivery mechanism 
+- Functional programming
+  - Referential transparency
+
 ### Perceived benefits of adopting property-based specification and testing (for us :)
 
 In general, we were able to improve the quality of our feedback loop. It could start sooner (at the data specification stage), and we could get new explicit, specific and actionable feedback. All this results in less error propagation to later stages in the development process. 
