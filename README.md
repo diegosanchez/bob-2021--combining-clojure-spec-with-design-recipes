@@ -58,7 +58,7 @@ This approach is based on combining the main ideas of two books: [How to Design 
 
 ## Misc
 
-### Helpful links
+### Useful Links
 
 [What are the Clojure Tools (clojure, clj, etc.)?](https://betweentwoparens.com/what-are-the-clojure-tools)
 
