@@ -13,7 +13,7 @@ This combination allows us to:
 - count with specification-based generative tests, and
 - automatic, specification-based documentation for the domain model
 
-    This approach is based on combining the main ideas of two books: [How to Design Programs][htdp] (Felleisen et. al.) , and [Domain Modeling made Functional][fsharpfor] (Wlaschin).
+This approach is based on combining the main ideas of two books: [How to Design Programs][htdp] (Felleisen et. al.) , and [Domain Modeling made Functional][fsharpfor] (Wlaschin).
 
 ## Workshop
 
@@ -24,7 +24,7 @@ This combination allows us to:
 - Domain driven design (DDD)
   - Core domain (ex.: card, trx., overdraft, etc)
   - Application services (ex.: pay ride with the prepaid card)
-  - Delivery mechanism 
+  - Delivery mechanism
 - Functional programming
   - Referential transparency
 
