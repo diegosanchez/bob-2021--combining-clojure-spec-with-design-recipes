@@ -1,4 +1,4 @@
-# Combining clojure.spec with design recipes 
+# Combining clojure.spec with design recipes
 
 ## Abstract
 
@@ -17,30 +17,36 @@ This approach is based on combining the main ideas of two books: [How to Design 
 
 ## Workshop
 
-### Concepts to be explored during the activity
+<!-- ### What to Expect
 
-- How to design programs
-  - Recipes
-- Domain driven design (DDD)
+### Obtained Benefits
+
+### "Esto es lo que van a descubrir (pero sin decirlo)".
+
+### Results to be Expected (Diego)
+
+### Learning Objectives
+ -->
+### Expected Results
+
+- Detection of underlying logical inconsistencies and incoherencies within our domain model (both within and across its entities) *during the data specification step*.
+<!--
+(The) Domain Model > The whole Set of Entities
+ -->
+-  Automated and comprehensive enforcing of properties across the whole domain model *during the specification process*.
+- Comprehensive verification of inferred-but-not-explicit properties across the domain model. <!-- that would normally be detected only after the system has gone into staging/production --> _(E.g.: trx vs. ride-cost.)_
+- Automated generation of test data for function exercising.
+
+### Concepts to Explore
+
+- Design Recipies
+- Domain Driven Design (DDD)
   - Core domain (ex.: card, trx., overdraft, etc)
   - Application services (ex.: pay ride with the prepaid card)
   - Delivery mechanism
-- Functional programming
-  - Referential transparency
-
-### Perceived benefits of adopting property-based specification and testing (for us :)
-
-In general, we were able to improve the quality of our feedback loop. It could start sooner (at the data specification stage), and we could get new explicit, specific and actionable feedback. All this results in less error propagation to later stages in the development process. 
-
-In some cases, the errors prevented in this way would normally be detected only after the system has gone into staging/production.
-
-More specifically:
-
-- Automatic Generation of Test Data for excercising Functions during development.
-- Detection of underlying Logical Inconsitencies and Incoherences within our Model (both within and across its Entities) *during the data specification step*.
--  Automatic Enforcing of properties (not only of the Entities, but also of the Data Model) *during the specification process.*
-- Comprehensive Verification of inferred-but-not-explicitated properties of the Entities. This can also result in the revelation of implicit relationships across Entities that would normally be detected only after the system has gone into staging/production.__(E.g.: trx vs. ride-cost.)_
-
+- Domain Model Specifications
+- Functional Programming
+  - Referential Transparency
 
 ### Toolbox
 
