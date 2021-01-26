@@ -39,7 +39,7 @@ This approach is based on combining the main ideas of two books: [How to Design 
 
 ### Concepts to Explore
 
-- Design Recipies
+- Design Recipes
 - Domain Driven Design (DDD)
   - Core domain (ex.: card, trx., overdraft, etc)
   - Application services (ex.: pay ride with the prepaid card)
