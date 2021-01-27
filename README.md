@@ -1,3 +1,5 @@
+[![ci status](https://circleci.com/gh/diegosanchez/bob-combining-clojure-spec-with-design-recipes.svg?style=shield)](https://app.circleci.com/pipelines/github/diegosanchez/bob-combining-clojure-spec-with-design-recipes)
+
 # Combining clojure.spec with design recipes
 
 ## Index 
