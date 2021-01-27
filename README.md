@@ -8,9 +8,11 @@
 - [Workshop](#workshop)
   - [Expected Results](#expected-results)
   - [Concepts to Explore](#concepts-to-explore)
+  - [Agenda](#agenda)
   - [Prerequisites](#prerequisites)
     - [Getting the code](#getting-the-code)
     - [Setting up the development environment](#setting-up-the-development-environment)
+  - [Working with the code](#working-with-the-code)
 
 ## Context
 
@@ -53,6 +55,12 @@ This approach is based on combining the main ideas of two books:
 - Functional Programming
   - Referential Transparency
 
+### Agenda (placeholder)
+
+1. Problem statement (5 min)
+2. Coding (30 - 40 min)
+3. Retrospective (until the rest)
+
 ### Prerequisites
 
 - a Clojure development environment already setup (so you are able to work with the code)
@@ -91,3 +99,15 @@ Clojure requires a minimal Java development environment. We use and recommend th
 - On MS Windows: (pending)
 
 You will also need [a Clojure-enabled text editor or IDE](https://clojure.org/community/tools).
+
+#### Working with the code.
+
+The project includes a `deps.edn` with all the necessary setup.
+You can also use the model from https://github.com/practicalli/clojure-deps-edn
+
+Some common tasks below.
+
+| Task     | Command     | Configuration      |
+|----------|-------------|--------------------|
+Run tests 	clojure -M:test/runner 	User/Project alias
+Run the project 	clojure -M -m domain.main-namespace 	Built-in
