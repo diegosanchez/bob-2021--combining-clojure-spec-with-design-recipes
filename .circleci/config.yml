@@ -1,0 +1,30 @@
+version: 2
+jobs: 
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/clojure:tools-deps-1.10.1.502
+    steps:
+      - checkout
+      - run:
+          name: Get rid of erroneous git config
+          command: |
+              rm -rf ~/.gitconfig
+      - run:
+          name: Running test...
+          command: |
+            clojure -A:runner:test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
