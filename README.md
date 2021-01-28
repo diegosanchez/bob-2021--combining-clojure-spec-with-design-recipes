@@ -4,21 +4,17 @@
 
 - [Context](#context)
 - [Workshop](#workshop)
+  - [Prerequisites](#prerequisites)
+  - [Working with the code](#working-with-the-code)
+    - [Getting the code](#getting-the-code)
+    - [Setting up the development environment](#setting-up-the-development-environment)
   - [Expected Results](#expected-results)
   - [Concepts to Explore](#concepts-to-explore)
   - [Agenda](#agenda)
-  - [Prerequisites](#prerequisites)
-    - [Getting the code](#getting-the-code)
-    - [Setting up the development environment](#setting-up-the-development-environment)
-  - [Working with the code](#working-with-the-code)
 
 ## Context
 
 [Combining clojure.spec with design recipes](https://bobkonf.de/2021/sanchez-doctors.html)
-
-This approach is based on combining the main ideas of two books:
-- [How to Design Programs: An Introduction to Programming and Computing, 2nd Ed. (Felleisen, Findler, Flatt, & Krishnamurthi)](https://htdp.org/), and
-- [Domain Modeling made Functional (Wlaschin)](https://fsharpforfunandprofit.com/books/).
 
 ## Workshop
 
@@ -32,49 +28,28 @@ This approach is based on combining the main ideas of two books:
 
 ### Learning Objectives
  -->
-### Expected Results
+### Prerequisites
 
-- Detection of underlying logical inconsistencies and incoherencies within our domain model (both within and across its entities) *during the data specification step*.
-<!--
-(The) Domain Model > The whole Set of Entities
- -->
--  Automated and comprehensive enforcing of properties across the whole domain model *during the specification process*.
-- Comprehensive verification of inferred-but-not-explicit properties across the domain model. <!-- that would normally be detected only after the system has gone into staging/production --> _(E.g.: trx vs. ride-cost.)_
-- Automated generation of test data for function exercising.
-
-### Concepts to Explore
-
-- Design Recipes
-- Domain Driven Design (DDD)
-  - Core domain (ex.: card, trx., overdraft, etc)
-  - Application services (ex.: pay ride with the prepaid card)
-  - Delivery mechanism
-- Domain Model Specifications
-- Functional Programming
-  - Referential Transparency
+- Installed [Clojure 1.10.2 + the Clojure CLI tools][external-clojure-installation]
+- Set up your favourite IDE for clojure. [Editor as IDE][external-clojure-editor-as-ide]
 
 ### Agenda (placeholder)
 
-1. Problem statement (5 min)
-2. Coding (30 - 40 min)
-3. Retrospective (until the rest)
-
-### Prerequisites
-
-- a Clojure development environment already setup (so you are able to work with the code)
-- a copy of this repo (so you have the code to work with)
-- an Internet connection (so you can ask questions)
+1. (**5 min.**) - Problem statement
+2. (**? min.**) - Playing with the code
+3. (**2 min.**) - New feature statement
+2. (**? min.**) - Playing with the code
+3. (**remaining time**) - Retrospective
 
 #### Getting the code
 
-0. Ask for permission to access the repo
+0. Fork this repository ([Forking](https://guides.github.com/activities/forking/))
 
 1. Clone this repo
 
 ```shell
-        git clone git@github.com:diegosanchez/bob-combining-clojure-spec-with-design-recipes.git
+        git clone git@github.com:<github-user>/bob-combining-clojure-spec-with-design-recipes.git
 ```
-
 
 2. Checkout the branch `start-here`
 
@@ -109,3 +84,19 @@ Some common tasks below.
 |----------|-------------|--------------------|
 Run tests |	clojure -M:test/runner |	User/Project alias
 Run the project  |	clojure -M -m domain.main-namespace |	Built-in
+
+### Expected Results
+
+[doc](EXPECTED_RESULTS.md)
+
+### Concepts to Explore
+
+[doc](CONCEPTS_TO_EXPLORE.md)
+
+## Misc
+
+- [What are the Clojure Tools (clojure, clj, etc.)?][external-clojure-toolbox]
+
+[external-clojure-installation]: https://clojure.org/guides/getting_started
+[external-clojure-editor-as-ide]: https://clojure.org/community/tools
+[external-clojure-toolbox]: https://betweentwoparens.com/what-are-the-clojure-tools
