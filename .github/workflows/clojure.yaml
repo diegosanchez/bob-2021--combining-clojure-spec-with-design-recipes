@@ -1,0 +1,13 @@
+name: tools.deps-builder
+
+on: push
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-20.04
+    container: clojure:tools-deps
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: clojure -M:test:runner
