@@ -107,5 +107,5 @@ Some common tasks below.
 
 | Task     | Command     | Configuration      |
 |----------|-------------|--------------------|
-Run tests 	clojure -M:test/runner 	User/Project alias
-Run the project 	clojure -M -m domain.main-namespace 	Built-in
+Run tests |	clojure -M:test/runner |	User/Project alias
+Run the project  |	clojure -M -m domain.main-namespace |	Built-in
