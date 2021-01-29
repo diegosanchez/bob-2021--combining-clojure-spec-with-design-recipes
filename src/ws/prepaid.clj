@@ -1,6 +1,6 @@
 (ns ws.prepaid)
 
-(defn card
+(defn use-case
   "I don't do a whole lot."
   [x]
   (prn x "Hello, World!"))

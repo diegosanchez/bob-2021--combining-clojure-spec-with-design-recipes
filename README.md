@@ -2,6 +2,10 @@
 
 # Combining clojure.spec with design recipes 
 
+## IMPORTANT
+
+**_Please, you should not fork the repository until the day of the workshop._**
+
 ## Index
 
 - [Context](#context)
@@ -35,54 +39,53 @@
 2. (**? min.**) - Playing with the code
 3. (**remaining time**) - Retrospective 
 
-#### Getting the code
-
-**IMPORTANT:**
-
-Please, avoid forking until the day of the workshop. 
-
+#### Get ready for the activity
 
 0. Fork this repository. ([Forking][external-github-fork]).
 
-1. Clone this repo
+1. Clone the forked repository
 
-```shell
-        git clone git@github.com:<github-user>/bob-combining-clojure-spec-with-design-recipes.git
+```bash
+git clone git@github.com:<github-user>/bob-combining-clojure-spec-with-design-recipes.git
 ```
 
-2. Checkout the branch `start-here`
+2. Run test
 
-```shell
-        git branch start-here
+```bash
+clojure -M:test/runner
 ```
 
-#### Setting up the development environment
+Expected output:
 
-Our project is as tool-agnostic as possible. The only actual requirement is [Clojure 1.10.2 + the Clojure CLI tools](https://clojure.org/guides/getting_started). [What are the Clojure Tools (clojure, clj, etc.)?](https://betweentwoparens.com/what-are-the-clojure-tools)
+```
+Running tests in #{"test"}
 
-    
-Clojure requires a minimal Java development environment. We use and recommend the libre [OpenJDK](https://openjdk.java.net/). Depending on your OS, you may already have it installed.
+Testing ws.prepaid-test
 
-- On GNU/Linux:
-  - Debian-based distributions: `[sudo] apt install default-jdk`
-  - Fedora-based distributions: `[sudo] dnf install java-11-openjdk-devel.x86_64`
-- On FreeBSD: `pkg install openjdk11`
-- On MacOS: (pending)
-- On MS Windows: (pending)
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
-You will also need [a Clojure-enabled text editor or IDE](https://clojure.org/community/tools).
+3. Invoke library 
 
-#### Working with the code.
+```bash
+clojure -X ws.prepaid/use-case :a 1 :b '"two"'
+```
 
-The project includes a `deps.edn` with all the necessary setup.
-You can also use the model from https://github.com/practicalli/clojure-deps-edn
+Expected output:
+
+```
+{:a 1, :b "two"} "Hello, World!"
+```
+
+### Helpful tasks
 
 Some common tasks below.
 
-| Task            | Command                             | Configuration      | 
-|-----------------|-------------------------------------|--------------------|
-| Run tests       | clojure -M:test/runner              | User/Project alias |
-| Run the project | clojure -M -m domain.main-namespace | Built-in           |
+| Task           | Command                                 | Configuration      |
+|----------------|-----------------------------------------|--------------------|
+| Run tests      | clojure -M:test/runner                  | User/Project alias |
+| Invoke library | clojure -X ws.prepaid/use-case [<args>] | Built-in           |
 
 
 ### Expected Results
