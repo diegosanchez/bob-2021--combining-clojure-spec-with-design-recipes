@@ -1,111 +1,109 @@
-# Combining clojure.spec with design recipes ![CI status](https://github.com/diegosanchez/bob-combining-clojure-spec-with-design-recipes/workflows/tools.deps-builder/badge.svg)
+![CI status](https://github.com/diegosanchez/bob-combining-clojure-spec-with-design-recipes/workflows/tools.deps-builder/badge.svg)
+
+# Combining clojure.spec with design recipes 
+
+## IMPORTANT
+
+**_Please, you should not fork the repository until the day of the workshop._**
 
 ## Index
 
 - [Context](#context)
 - [Workshop](#workshop)
-  - [Expected Results](#expected-results)
-  - [Concepts to Explore](#concepts-to-explore)
-  - [Agenda](#agenda)
   - [Prerequisites](#prerequisites)
-    - [Getting the code](#getting-the-code)
-    - [Setting up the development environment](#setting-up-the-development-environment)
-  - [Working with the code](#working-with-the-code)
+  - [Agenda](#agenda)
+  - [Get ready for the activity](#get-ready-for-the-activity)
+- [Expected Results](#expected-results)
+- [Concepts to Explore](#concepts-to-explore)
 
 ## Context
 
-[Combining clojure.spec with design recipes](https://bobkonf.de/2021/sanchez-doctors.html)
-
-This approach is based on combining the main ideas of two books:
-- [How to Design Programs: An Introduction to Programming and Computing, 2nd Ed. (Felleisen, Findler, Flatt, & Krishnamurthi)](https://htdp.org/), and
-- [Domain Modeling made Functional (Wlaschin)](https://fsharpforfunandprofit.com/books/).
+[Combining clojure.spec with design recipes][external-bob]
 
 ## Workshop
 
-<!-- ### What to Expect
+### Prerequisites
 
-### Obtained Benefits
-
-### "Esto es lo que van a descubrir (pero sin decirlo)".
-
-### Results to be Expected (Diego)
-
-### Learning Objectives
- -->
-### Expected Results
-
-- Detection of underlying logical inconsistencies and incoherencies within our domain model (both within and across its entities) *during the data specification step*.
-<!--
-(The) Domain Model > The whole Set of Entities
- -->
--  Automated and comprehensive enforcing of properties across the whole domain model *during the specification process*.
-- Comprehensive verification of inferred-but-not-explicit properties across the domain model. <!-- that would normally be detected only after the system has gone into staging/production --> _(E.g.: trx vs. ride-cost.)_
-- Automated generation of test data for function exercising.
-
-### Concepts to Explore
-
-- Design Recipes
-- Domain Driven Design (DDD)
-  - Core domain (ex.: card, trx., overdraft, etc)
-  - Application services (ex.: pay ride with the prepaid card)
-  - Delivery mechanism
-- Domain Model Specifications
-- Functional Programming
-  - Referential Transparency
+- An [github][external-github] account.
+- [Git][external-git] installed.
+- [Clojure 1.10.2 + the Clojure CLI tools][external-clojure-installation] installed.
+- Desire IDE already set up. [Editor as IDE][external-clojure-editor-as-ide].
 
 ### Agenda (placeholder)
 
-1. Problem statement (5 min)
-2. Coding (30 - 40 min)
-3. Retrospective (until the rest)
+1. (**5 min.**) - Problem statement
+2. (**? min.**) - Playing with the code
+3. (**2 min.**) - New feature statement 
+2. (**? min.**) - Playing with the code
+3. (**remaining time**) - Retrospective 
 
-### Prerequisites
+### Get ready for the activity
 
-- a Clojure development environment already setup (so you are able to work with the code)
-- a copy of this repo (so you have the code to work with)
-- an Internet connection (so you can ask questions)
+#### Fork this repository. 
 
-#### Getting the code
+In order to fork the repository, you could follow the following instructions: [Forking][external-github-fork].
 
-0. Ask for permission to access the repo
+#### Clone the forked repository
 
-1. Clone this repo
-
-```shell
-        git clone git@github.com:diegosanchez/bob-combining-clojure-spec-with-design-recipes.git
+```bash
+git clone git@github.com:<github-user>/bob-combining-clojure-spec-with-design-recipes.git
 ```
 
+#### Run test (verification)
 
-2. Checkout the branch `start-here`
-
-```shell
-        git branch start-here
+```bash
+clojure -M:test:runner
 ```
 
-#### Setting up the development environment
+Expected output:
 
-Our project is as tool-agnostic as possible. The only actual requirement is [Clojure 1.10.2 + the Clojure CLI tools](https://clojure.org/guides/getting_started). [What are the Clojure Tools (clojure, clj, etc.)?](https://betweentwoparens.com/what-are-the-clojure-tools)
+```
+Running tests in #{"test"}
 
+Testing ws.prepaid-test
 
-Clojure requires a minimal Java development environment. We use and recommend the libre [OpenJDK](https://openjdk.java.net/). Depending on your OS, you may already have it installed.
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
-- On GNU/Linux:
-  - Debian-based distributions: `[sudo] apt install default-jdk`
-  - Fedora-based distributions: `[sudo] dnf install java-11-openjdk-devel.x86_64`
-- On FreeBSD: `pkg install openjdk11`
-- On MacOS: (pending)
-- On MS Windows: (pending)
+#### Invoke library (verification)
 
-You will also need [a Clojure-enabled text editor or IDE](https://clojure.org/community/tools).
+```bash
+clojure -X ws.prepaid/use-case :a 1 :b '"two"'
+```
 
-#### Working with the code.
+Expected output:
 
-The project includes a `deps.edn` with all the necessary setup.
-You can also use the model from https://github.com/practicalli/clojure-deps-edn
+```
+{:a 1, :b "two"} "Hello, World!"
+```
+
+### Helpful tasks
 
 Some common tasks below.
 
-| Task     | Command     | Configuration      |
-|----------|-------------|--------------------|
-Run tests |	clojure -M:test/runner |	User/Project alias
-Run the project  |	clojure -M -m domain.main-namespace |	Built-in
+| Task           | Command                                   |
+|----------------|-------------------------------------------|
+| Run tests      | `clojure -M:test:runner`                  |
+| Invoke library | `clojure -X ws.prepaid/use-case [<args>]` |
+
+
+## Expected Results
+
+[Read more...](EXPECTED_RESULTS.md)
+
+## Concepts to Explore
+
+[Read more...](CONCEPTS_TO_EXPLORE.md)
+
+## Misc
+
+- [What are the Clojure Tools (clojure, clj, etc.)?][external-clojure-toolbox]
+
+[external-clojure-installation]: https://clojure.org/guides/getting_started
+[external-clojure-editor-as-ide]: https://clojure.org/community/tools
+[external-clojure-toolbox]: https://betweentwoparens.com/what-are-the-clojure-tools
+[external-git]: https://git-scm.com/doc
+[external-github]: https://github.com/
+[external-github-fork]: https://guides.github.com/activities/forking/
+[external-bob]: https://bobkonf.de/2021/sanchez-doctors.html
