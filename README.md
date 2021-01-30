@@ -27,15 +27,16 @@
 - An [github][external-github] account.
 - [Git][external-git] installed.
 - [Clojure 1.10.2 + the Clojure CLI tools][external-clojure-installation] installed.
-- Desire IDE already set up. [Editor as IDE][external-clojure-editor-as-ide].
+- Your favourite IDE already set up. [Editor as IDE][external-clojure-editor-as-ide].
 
 ### Agenda (placeholder)
 
-1. (**5 min.**) - Problem statement
-2. (**? min.**) - Playing with the code
-3. (**2 min.**) - New feature statement 
-2. (**? min.**) - Playing with the code
-3. (**remaining time**) - Retrospective 
+1. (**10 min.**) - Presentation
+10. (** 5 min.**) - Problem statement
+20. (** ? min.**) - Playing with the code
+30. (** 2 min.**) - New feature statement
+40. (** ? min.**) - Playing with the code
+50. (** 5 min.**) - Retrospective
 
 ### Get ready for the activity
 
