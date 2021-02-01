@@ -70,13 +70,16 @@ Ran 1 tests containing 1 assertions.
 #### Invoke library (verification)
 
 ```bash
-clojure -X ws.prepaid/use-case :a 1 :b '"two"'
+    clojure -X:use-case
 ```
 
 Expected output:
 
 ```
-{:a 1, :b "two"} "Hello, World!"
+Entry point for testing the use case from CLI...
+Args: {:key-simple 1, :key-map-value {:v1 "a", :v2 "b"}}
+Calling use case...
+1 {:v1 "a", :v2 "b"}
 ```
 
 ### Helpful tasks
@@ -86,7 +89,6 @@ Some common tasks below.
 | Task           | Command                                   |
 |----------------|-------------------------------------------|
 | Run tests      | `clojure -M:test:runner`                  |
-| Invoke library | `clojure -X ws.prepaid/use-case [<args>]` |
 
 
 ## Expected Results

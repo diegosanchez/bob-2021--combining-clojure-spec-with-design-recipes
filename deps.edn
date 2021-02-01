@@ -1,7 +1,12 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
  :aliases
- {:test {:extra-paths ["test"]
+ {:use-case {:exec-fn ws.delivery/main
+             :exec-args {
+                         :key-simple 1
+                         :key-map-value {:v1 "a"
+                                         :v2 "b"}}}
+  :test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}}}
   :runner
   {:extra-deps {com.cognitect/test-runner
