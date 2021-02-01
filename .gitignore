@@ -1,3 +1,5 @@
+# Clojure and Java
+
 pom.xml
 pom.xml.asc
 *.jar
@@ -12,3 +14,43 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+
+
+# LaTeX and friends
+
+# LaTeX
+*.acn
+*.acr
+*.alg
+*.aux
+*.bak
+*.bcf
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.pdf
+*.pyg
+*.synctex.gz
+*.toc
+*.xml
+temp_outputs/
+
+# AUCTeX auto folder
+/auto/
+
