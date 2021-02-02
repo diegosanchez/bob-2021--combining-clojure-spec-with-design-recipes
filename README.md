@@ -86,9 +86,11 @@ Calling use case...
 
 Some common tasks below.
 
-| Task           | Command                                   |
-|----------------|-------------------------------------------|
-| Run tests      | `clojure -M:test:runner`                  |
+| Task               | Command                                         |
+|--------------------|-------------------------------------------------|
+| Run all tests      | `clojure -M:test:runner`                        |
+| Run unstable tests | `clojure -M:test:runner -i, --include unstable` |
+| Run stable tests   | `clojure -M:test:runner -e, --exclude unstable` |
 
 
 ## Expected Results
@@ -102,6 +104,7 @@ Some common tasks below.
 ## Misc
 
 - [What are the Clojure Tools (clojure, clj, etc.)?][external-clojure-toolbox]
+- [Test runner][external-test-runner]
 
 [external-clojure-installation]: https://clojure.org/guides/getting_started
 [external-clojure-editor-as-ide]: https://clojure.org/community/tools
@@ -110,3 +113,4 @@ Some common tasks below.
 [external-github]: https://github.com/
 [external-github-fork]: https://guides.github.com/activities/forking/
 [external-bob]: https://bobkonf.de/2021/sanchez-doctors.html
+[external-test-runner]: https://github.com/cognitect-labs/test-runner
