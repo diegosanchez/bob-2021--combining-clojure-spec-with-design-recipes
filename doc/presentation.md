@@ -54,6 +54,58 @@ _("Is there any other way?")_
 5. Definition (Code)
 6. Testing
 
+#### Designing a Function in Clojure
+
+0. Problem statement
+
+Compute the area of a square.
+
+1. Problem Analysis --> Data Definitions
+
+```clojure
+    ;; We will use numbers to represent the square's side length.
+```
+
+2. Signature, Purpose Statement, Header
+
+```clojure
+;; Number --> Number
+;; Compute the area of a square with side len.
+(defn area-of-square
+  [len]
+  ...)
+```
+
+3. Examples
+
+```clojure
+;; given: 2, expect: 4
+;; given: 7, expect: 4
+```
+4. Template
+
+```clojure
+(defn area-of-square
+  [len]
+  (... len ...))
+```
+
+5. Definition (Code)
+
+```clojure
+(defn area-of-square
+  [len]
+  "compute the area of a square of side `len`."
+  (* len len))
+```
+
+6. Testing
+
+```clojure
+(is (= 4 (area-of-square 2)) "A square of side 2 should have an area of 4.")
+(is (= 49 (area-of-square 7)) "A square of side 7 should have an area of 49.")
+```
+
 ### Domain-Driven Design (Domain Modeling made Functional)
 
 ### Software Specification (clojure.spec)
