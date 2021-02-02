@@ -56,6 +56,8 @@ _("Is there any other way?")_
 
 #### Designing a Function in Clojure
 
+(Example taken from HTDP, Section 3.1)
+
 0. Problem statement
 
 Compute the area of a square.
@@ -82,6 +84,7 @@ Compute the area of a square.
 ;; given: 2, expect: 4
 ;; given: 7, expect: 49
 ```
+
 4. Template
 
 ```clojure
