@@ -80,7 +80,7 @@ Compute the area of a square.
 
 ```clojure
 ;; given: 2, expect: 4
-;; given: 7, expect: 4
+;; given: 7, expect: 49
 ```
 4. Template
 
