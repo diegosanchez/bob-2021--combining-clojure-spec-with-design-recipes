@@ -113,7 +113,7 @@ Compute the area of a square.
 
 ### Software Specification (clojure.spec)
 
-#### Designing a Function in Clojure (with clojure.spec)
+#### Designing a Function in Clojure, revisited (with clojure.spec)
 
 0. Problem statement (no changes)
 
@@ -151,6 +151,7 @@ Compute the area of a square.
 ;; given: 2, expect: 4
 ;; given: 7, expect: 49
 ```
+
 4. Template (no changes)
 
 ```clojure
