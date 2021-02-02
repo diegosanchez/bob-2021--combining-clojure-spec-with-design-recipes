@@ -110,6 +110,63 @@ Compute the area of a square.
 
 ### Software Specification (clojure.spec)
 
+#### Designing a Function in Clojure (with clojure.spec)
+
+0. Problem statement (no changes)
+
+Compute the area of a square.
+
+1. Problem Analysis --> Data Definitions (no changes)
+
+```clojure
+    ;; We will use numbers to represent the square's side length.
+```
+
+2. Signature, Purpose Statement, Header (changes significantly!)
+
+```clojure
+;; Number --> Number
+
+(s/def ::lenght
+  nat-int?)
+
+(s/fdef area-of-square
+  :args :len ::lenght
+  :ret ::lenght
+  :fn (= :ret (* :len :len)))
+
+;; Compute the area of a square with side len.
+
+(defn area-of-square
+  [len]
+  ...)
+```
+
+3. Examples (no changes)
+
+```clojure
+;; given: 2, expect: 4
+;; given: 7, expect: 49
+```
+4. Template (no changes)
+
+```clojure
+(defn area-of-square
+  [len]
+  (... len ...))
+```
+
+5. Definition (Code - no changes)
+
+```clojure
+(defn area-of-square
+  [len]
+  "compute the area of a square of side `len`."
+  (* len len))
+```
+
+6. Testing (TODO: use generative testing)
+
 ## Our Problem
 
 ## Solving the Problem
