@@ -1,4 +1,5 @@
-(ns ws.prepaid)
+(ns ws.prepaid
+  (:require [clojure.spec.alpha :as s]))
 
 
 ;; We will design the function that represents the use-case: Paid a ride.
@@ -24,6 +25,40 @@
 ;;
 ;; Step 0: After analysis we decide to implement the function `paid-ride`
 ;; 
+
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "Express how you wish to represent information as data. A one-line comment suffices:
+;;
+;;    'We use numbers to represent centimeters.'
+;;
+;; Formulate data definitions, like the one for Temperature, for the classes of data you consider critical for the success of your program."
+;;
+;; Step 1:
+;;  - What is the purpose of the function?
+;;    The function responses `true` if there is enough money to pay the ride (balance)
+;;  - Which arguments the function  receives?
+;;    Entities come up: card, ride-cost, trx
+;;  - What is the result or the returned value?
+;;    Entity: result
+;;
+
+(s/def ::raid-cost
+  pos-int?)
+
+(s/def ::trx
+  pos-int?)
+
+(s/def ::transactions
+  (s/coll-of ::trx))
+
+(s/def ::card
+  (s/keys
+   :req [::transactions]))
+
+(s/def ::result
+  boolean?)
 
 (defn paid-ride
   [arg1 arg2]
