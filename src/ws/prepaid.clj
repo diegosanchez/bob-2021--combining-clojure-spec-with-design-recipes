@@ -116,9 +116,22 @@
 ;;   (... card ... raid-cost...))
 ;;
 
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "It is now time to code. In general, to code means to program, though often in the narrowest possible way, namely, to write executable expressions and function definitions."
+;;
+;; Step 5: Yeah! Let's Code
+;;
+;;
+
+(defn card-balance
+  [card]
+  (reduce + (:transactions card)))
+
 (defn pay-ride
   [card ride-cost]
-  false)
+  (< ride-cost (card-balance card)))
   
 (s/fdef pay-ride
   :args (s/cat :card ::card
