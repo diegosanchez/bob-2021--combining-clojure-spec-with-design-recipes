@@ -9,5 +9,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Run tests
-        run: clojure -M:test:runner
+      - name: Run stable tests
+        run: clojure -M:test:runner -e:unstable
+      - name: Run unstable tests
+        run: clojure -M:test:runner -i:unstable
