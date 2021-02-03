@@ -4,10 +4,10 @@
 
 ;; We will design the function that represents the use-case: Paid a ride.
 
-;; The delivery mechanism invokes the function `paid-ride` using the arguments
+;; The delivery mechanism invokes the function `pay-ride` using the arguments
 ;; described by the alias `use-case` at the `deps.edn` file.
 
-;; If you need to add extrea arguments for the `paid-ride` function the we need
+;; If you need to add extrea arguments for the `pay-ride` function the we need
 ;; to update the file `delivery.clj` to map the keys to function arguments.
 
 ;; For the shake of simplicity let's write our whole code in this file `prepaid.clj`.
@@ -23,7 +23,7 @@
 ;; to interpret output data as information, the design of an individual function proceeds
 ;; according to a straightforward process:"
 ;;
-;; Step 0: After analysis we decide to implement the function `paid-ride`
+;; Step 0: After analysis we decide to implement the function `pay-ride`
 ;; 
 
 ;;
@@ -44,8 +44,17 @@
 ;;    Entity: result
 ;;
 
-(s/def ::raid-cost
+(s/def ::ride-cost
   pos-int?)
+
+;;
+;; A way to exercise your definition. The same code snippet can be applied for each `s/def`.
+;;
+(comment
+  (require '[clojure.spec.gen.alpha :as gen])
+  (require '[clojure.spec.alpha :as s])
+
+  (gen/sample (s/gen ::ride-cost)))
 
 (s/def ::trx
   pos-int?)
@@ -55,12 +64,59 @@
 
 (s/def ::card
   (s/keys
-   :req [::transactions]))
+   :req-un [::transactions]))
+
+(comment
+  (require '[clojure.spec.gen.alpha :as gen])
+  (require '[clojure.spec.alpha :as s])
+
+  (gen/sample (s/gen ::card)))
 
 (s/def ::result
   boolean?)
 
-(defn paid-ride
-  [arg1 arg2]
-  (prn arg1 arg2))
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "Write down a signature, a statement of purpose, and a function header."
+;;
+;; Step 2:
+;;  - Whay is the function signature?
+;;  - What does the function compute?
+;;
+;; (defn pay-ride
+;;   "Returns true if the card's balance is equal or bigger than the ride-cost"
+;;   [card ride-cost]
+;;   false)
+;;
+
+(defn pay-ride
+  [card ride-cost]
+  false)
+  
+(s/fdef pay-ride
+  :args (s/cat :card ::card
+               :ride-cost ::ride-cost)
+  :ret ::result)
+
+(comment
+  (require '[clojure.spec.test.alpha :as stest])
+
+  (stest/abbrev-result (first (stest/check `pay-ride)))
+  ;; => {:sym ws.prepaid/pay-ride}
+  
+  (stest/check `pay-ride)
+  ;; => ({:spec
+  ;;      #object[clojure.spec.alpha$fspec_impl$reify__2524 0x1c3549d "clojure.spec.alpha$fspec_impl$reify__2524@1c3549d"],
+  ;;      :clojure.spec.test.check/ret
+  ;;      {:result true,
+  ;;       :pass? true,
+  ;;       :num-tests 1000,
+  ;;       :time-elapsed-ms 79,
+  ;;       :seed 1612384926073},
+  ;;      :sym ws.prepaid/pay-ride}))
+
+  (stest/summarize-results (stest/check `pay-ride))
+  ;; => {:total 1, :check-passed 1}
+  )
   
