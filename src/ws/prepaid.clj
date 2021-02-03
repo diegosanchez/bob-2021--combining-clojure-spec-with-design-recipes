@@ -90,6 +90,21 @@
 ;;   false)
 ;;
 
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "llustrate the signature and the purpose statement with some functional examples. To construct a functional example, pick one piece of data from each input class from the signature and determine what you expect back"
+;;
+;; Step 3:
+;;  Example 1
+;;   - card.transactions: [100]
+;;   - raid-cost: 10
+;;   - result: true
+;;
+;; NOTE: You optionally could write a test for this scenario. Please, be patient... We will do it at Step 6.
+;;
+
+
 (defn pay-ride
   [card ride-cost]
   false)
