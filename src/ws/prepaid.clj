@@ -93,7 +93,7 @@
 ;;
 ;; Quote from HdP - 3.1 Designing Functions:
 ;;
-;; "llustrate the signature and the purpose statement with some functional examples. To construct a functional example, pick one piece of data from each input class from the signature and determine what you expect back"
+;; "Illustrate the signature and the purpose statement with some functional examples. To construct a functional example, pick one piece of data from each input class from the signature and determine what you expect back"
 ;;
 ;; Step 3:
 ;;  Example 1
@@ -104,6 +104,17 @@
 ;; NOTE: You optionally could write a test for this scenario. Please, be patient... We will do it at Step 6.
 ;;
 
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "The next step is to take inventory, to understand what are the givens and what we need to compute. For the simple functions we are considering right now, we know that they are given data via parameters. While parameters are placeholders for values that we don’t know yet, we do know that it is from this unknown data that the function must compute its result. To remind ourselves of this fact, we replace the function’s body with a template.""
+;;
+;; Step 4:
+;;
+;; (defn pay-raid
+;;   [card raid-cost]
+;;   (... card ... raid-cost...))
+;;
 
 (defn pay-ride
   [card ride-cost]
