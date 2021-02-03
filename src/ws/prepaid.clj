@@ -57,7 +57,7 @@
   (gen/sample (s/gen ::ride-cost)))
 
 (s/def ::trx
-  pos-int?)
+  int?)
 
 (s/def ::transactions
   (s/coll-of ::trx))
@@ -124,6 +124,26 @@
 ;; Step 5: Yeah! Let's Code
 ;;
 ;;
+
+;;
+;; Quote from HdP - 3.1 Designing Functions:
+;;
+;; "The last step of a proper design is to test the function on the examples that you worked out before..."
+;;
+;; Step 6:
+;;  - What happend with the tests?
+;;  - Are there failing tests? Which one?
+;;
+;; NOTE: Write a tests for the cases depicted at the stage 3
+;;
+
+(defn create-trx
+  [value]
+  value)
+
+(defn create-card
+  [initial-balance]
+  {:transactions [(create-trx initial-balance)]})
 
 (defn card-balance
   [card]
