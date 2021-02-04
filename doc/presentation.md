@@ -2,6 +2,18 @@
 
 _(Note: Each `####` marks the beginning of one slide.)_
 
+## Why are we here?
+
+- To try gaining some insights from combining an approach (DDD), a technique (SSD), and a tooling library (clojure.spec).
+  Nothing more, nothing less.
+
+## Disclaimer
+
+- Please take this tutorial with a grain of salt. We are not dogmatic/orthodox.
+- Avoid focusing on the language or the tools we use: there are other combinations to achieve similar results.
+_(There are clojure.spec ports to other languages (Ruby, Python, JavaScript...) with varying degree of maturity.)__
+- This is **not** a clojure.spec tutorial (we are not clojure.spec experts). There may be a few glitches in our code. Please, bear with us.
+
 ## Background
 
 ### Systematic Software Design
