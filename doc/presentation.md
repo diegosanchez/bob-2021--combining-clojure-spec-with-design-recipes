@@ -121,7 +121,29 @@ Compute the area of a square.
 (is (= 49 (area-of-square 7)) "A square of side 7 should have an area of 49.")
 ```
 
-### Domain-Driven Design (Domain Modeling made Functional)
+### Domain-Driven Development (Domain Modeling made Functional)
+
+#### DDD: Guidelines (DDMF)
+
+[Problem Space]
+
+  0. Involves All Stakeholders (Domain Experts, Dev. Team, Other Stakeholders)
+  ...and the Code.
+
+  1. Focus on Data _Transformations_, rather than on Data _Structures_.
+    ==> Core Domain _(Provides business advantage(s)./Brings in the money.)_
+    _(Not Core? Supportive.)_
+
+  2. Partition the Problem => (smaller) Subdomains
+
+[Solution Space]
+
+  3. Model Subdomains as Bounded Contexts _(not necessarily a 1-to-1 correspondence)_
+
+  4. Model the Interactions across Bounded Contexts
+
+  5. Develop an Ubiquitous Language (can have dialects across Contexts)
+  _(A **Globally*** Shared, Available, Live, and Context-Dependant Mental Model.)_
 
 ### Software Specification (clojure.spec)
 
