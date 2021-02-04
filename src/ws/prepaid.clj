@@ -44,8 +44,16 @@
 ;;    Entity: result
 ;;
 
+(def trx-min-value 500)
+(def trx-max-value 5000)
+
+;;
+;; Iteraction 2
+;;
+;; (s/def ::ride-cost
+;;   pos-int?)
 (s/def ::ride-cost
-  pos-int?)
+  (s/int-in 0 trx-min-value))
 
 ;;
 ;; A way to exercise your definition. The same code snippet can be applied for each `s/def`.
@@ -55,9 +63,6 @@
   (require '[clojure.spec.alpha :as s])
 
   (gen/sample (s/gen ::ride-cost)))
-
-(def trx-min-value 500)
-(def trx-max-value 5000)
 
 ;;
 ;; Iteration 1:
@@ -85,8 +90,12 @@
 
   (gen/sample (s/gen ::card)))
 
-(s/def ::result
+(s/def ::status
   boolean?)
+
+(s/def ::result
+  (s/keys
+   :req-un [::card ::status]))
 
 ;;
 ;; Quote from HdP - 3.1 Designing Functions:
@@ -150,22 +159,33 @@
 ;; NOTE: Write a tests for the cases depicted at the stage 3
 ;;
 
-(defn create-trx
+(defn trx-create
   [value]
   value)
 
-(defn create-card
-  [initial-balance]
-  {:transactions [(create-trx initial-balance)]})
+(defn trx-create-lst
+  [values]
+  (map trx-create values))
+
+(defn card-create
+  [trx & args]
+  {:transactions (trx-create-lst
+                  (concat [trx] args))})
 
 (defn card-balance
   [card]
   (reduce + (:transactions card)))
 
+(defn card-consume-credit
+  [card amount]
+  {:transactions
+   (concat [(- amount)] (:transactions card))})
+
 (defn pay-ride
   [card ride-cost]
-  (< ride-cost (card-balance card)))
-  
+  {:card (card-consume-credit card ride-cost)
+   :status (< ride-cost (card-balance card))})
+
 (s/fdef pay-ride
   :args (s/cat :card ::card
                :ride-cost ::ride-cost)
@@ -176,7 +196,7 @@
 
   (stest/abbrev-result (first (stest/check `pay-ride)))
   ;; => {:sym ws.prepaid/pay-ride}
-  
+
   (stest/check `pay-ride)
   ;; => ({:spec
   ;;      #object[clojure.spec.alpha$fspec_impl$reify__2524 0x1c3549d "clojure.spec.alpha$fspec_impl$reify__2524@1c3549d"],
@@ -191,4 +211,5 @@
   (stest/summarize-results (stest/check `pay-ride))
   ;; => {:total 1, :check-passed 1}
   )
-  
+
+ 
