@@ -56,8 +56,21 @@
 
   (gen/sample (s/gen ::ride-cost)))
 
+(def trx-min-value 500)
+(def trx-max-value 5000)
+
+;;
+;; Iteration 1:
+;;
+;; (s/def ::trx
+;;   int?)
+
+;;
+;; Iteration 2:
+;;
 (s/def ::trx
-  int?)
+  ;; int?
+  (s/int-in (- trx-min-value) trx-max-value))
 
 (s/def ::transactions
   (s/coll-of ::trx))
