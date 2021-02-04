@@ -44,6 +44,9 @@
 ;;    Entity: result
 ;;
 
+(s/def ::overdraft
+  pos-int?)
+
 (def trx-min-value 500)
 (def trx-max-value 5000)
 
@@ -82,7 +85,7 @@
 
 (s/def ::card
   (s/keys
-   :req-un [::transactions]))
+   :req-un [::overdraft ::transactions]))
 
 (comment
   (require '[clojure.spec.gen.alpha :as gen])
@@ -167,24 +170,38 @@
   [values]
   (map trx-create values))
 
+(defn card-create-with-overdraft
+  [initial-balance overdraft & trxs]
+  {:overdraft overdraft
+   :transactions (trx-create-lst
+                  (concat [initial-balance] trxs))})
+
 (defn card-create
-  [trx & args]
-  {:transactions (trx-create-lst
-                  (concat [trx] args))})
+  [initial-balance & trxs]
+  {:overdraft 0
+   :transactions (trx-create-lst
+                  (concat [initial-balance] trxs))})
+
+(defn card-consume-credit
+  [card amount]
+  {:overdraft (:overdraft card)
+   :transactions
+   (concat [(- amount)] (:transactions card))})
 
 (defn card-balance
   [card]
   (reduce + (:transactions card)))
 
-(defn card-consume-credit
-  [card amount]
-  {:transactions
-   (concat [(- amount)] (:transactions card))})
+(defn card-ride-is-affordable?
+  [card ride-cost]
+  (< ride-cost
+     (+ (card-balance card)
+        (:overdraft card))))
 
 (defn pay-ride
   [card ride-cost]
   {:card (card-consume-credit card ride-cost)
-   :status (< ride-cost (card-balance card))})
+   :status (card-ride-is-affordable? card ride-cost)})
 
 (s/fdef pay-ride
   :args (s/cat :card ::card
