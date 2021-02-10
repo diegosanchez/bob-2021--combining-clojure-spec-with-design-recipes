@@ -161,29 +161,6 @@
         (is (= {:total 1, :check-passed 1} (stest/summarize-results (stest/check `area-of-square))))
       #+END_SRC
 
-*** Domain-Driven Development (Domain Modeling made Functional)
-**** Guidelines (DMMF)
-     [Problem Space]
-     0. Involves All Stakeholders (Domain Experts, Dev. Team, Other
-   Stakeholders) ...and the Code.
-
-     1. Focus on Data /Transformations/, rather than on Data /Structures/.
-   ==> Core Domain /(Provides business advantage(s)./Brings in the
-   money.)/ /(Not Core? Supportive.)/
-
-     2. Partition the Problem => (smaller) Subdomains
-
-     [Solution Space]
-
-     3. Model Subdomains as Bounded Contexts /(not necessarily a 1-to-1
-   correspondence)/
-
-     4. Model the Interactions across Bounded Contexts
-
-     5. Develop an Ubiquitous Language (can have dialects across Contexts)
-   /(A *Globally** Shared, Available, Live, and Context-Dependant Mental
-   Model.)/
-
 ** Let's Solve a Problem!
 *** Problem Statement
 *** What have we learned so far?
