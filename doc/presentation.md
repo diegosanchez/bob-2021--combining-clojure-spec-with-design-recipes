@@ -205,6 +205,10 @@ Compute the area of a square.
 
 6. Testing (TODO: use generative testing)
 
+```clojure
+(is (= {:total 1, :check-passed 1} (stest/summarize-results (stest/check `area-of-square))))
+```
+
 ## Our Problem
 
 ## Solving the Problem
