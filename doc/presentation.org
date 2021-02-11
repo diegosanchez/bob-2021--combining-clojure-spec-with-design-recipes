@@ -162,11 +162,10 @@
       #+END_SRC
 
 ** Let's Solve a Problem!
-*** Problem Statement
-*** What have we learned so far?
-** What if it changes?
-*** A New Requirement!
-*** What have we learned today?
+*** Our (Initial) Problem
+**** Applying the Recipe
+*** What if it changes?
+**** Revisiting the Recipe
 ** Conclusions
 ** References
 ** More Information
