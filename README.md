@@ -2,10 +2,6 @@
 
 # Combining clojure.spec with design recipes 
 
-## IMPORTANT
-
-**_Please, you should not fork the repository until the day of the workshop._**
-
 ## Index
 
 - [Context](#context)
@@ -17,20 +13,24 @@
 - [Expected Results](#expected-results)
 - [Concepts to Explore](#concepts-to-explore)
 
-## Agenda (placeholder)
+## Agenda for the activity
 
 1. (**10 min**) - Presentation
 10. (**5 min.**) - Problem statement
-20. (**? min.**) - Playing with the code
+20. (**40 min.**) - Playing with the code
 30. (**2 min.**) - New feature statement
-40. (**? min.**) - Playing with the code
-50. (**5 min.**) - Retrospective
+40. (**20 min.**) - Playing with the code
+50. (**13 min.**) - Retrospective
 
 ## Context
 
 [Combining clojure.spec with design recipes][external-bob]
 
 ## Workshop
+
+## IMPORTANT
+
+**The _main_ branch may suffer changes. Likely, you will need to performe `git pull -r`. We let you know it during the workshop**
 
 ### Prerequisites
 
@@ -41,16 +41,17 @@
 
 ### Get ready for the activity
 
-#### Fork this repository. 
-
-In order to fork the repository, you could follow the following instructions: [Forking][external-github-fork].
-
-#### Clone the forked repository
+#### Clone the repository
 
 ```bash
-git clone git@github.com:<github-user>/bob-combining-clojure-spec-with-design-recipes.git
+git clone git@github.com:diegosanchez/bob-2021--combining-clojure-spec-with-design-recipes.git bob-2021
 ```
 
+#### Change directory
+
+```bash
+cd bob-2021
+```
 #### Run test (verification)
 
 ```bash
@@ -82,17 +83,6 @@ Args: {:key-simple 1, :key-map-value {:v1 "a", :v2 "b"}}
 Calling use case...
 1 {:v1 "a", :v2 "b"}
 ```
-
-### Helpful tasks
-
-Some common tasks below.
-
-| Task               | Command                                         |
-|--------------------|-------------------------------------------------|
-| Run all tests      | `clojure -M:test:runner`                        |
-| Run unstable tests | `clojure -M:test:runner -i, --include unstable` |
-| Run stable tests   | `clojure -M:test:runner -e, --exclude unstable` |
-
 
 ### The Problem Statement
 
@@ -132,6 +122,17 @@ As a guideness, some of the usecases could be:
 - [ ] The user has to pay 27, and its card balance is 20 with and overdraft amount of 10 then the payment is accomplished. Then the card has a new record with -27 and the balance is -7.
 
 -->
+
+### Helpful tasks
+
+Some common tasks below.
+
+| Task               | Command                                         |
+|--------------------|-------------------------------------------------|
+| Run all tests      | `clojure -M:test:runner`                        |
+| Run unstable tests | `clojure -M:test:runner -i, --include unstable` |
+| Run stable tests   | `clojure -M:test:runner -e, --exclude unstable` |
+| Run the use case   | `clojure -X:use-case`                           |
 
 ## Expected Results
 
