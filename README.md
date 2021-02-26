@@ -28,6 +28,8 @@
 
 [Presentation PDF with closed-captioned](/doc/bob.2021--combining-clojure.spec-with-design-recipes--closed-captioned.pdf)
 
+[Presentation video](https://youtu.be/qHMXpsVIysQ)
+
 ## Workshop
 
 ## IMPORTANT
