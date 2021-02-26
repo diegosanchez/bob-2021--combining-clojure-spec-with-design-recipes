@@ -26,6 +26,8 @@
 
 [Combining clojure.spec with design recipes][external-bob]
 
+[Presentation PDF with closed-captioned](doc/bob.2021--combining-clojure.spec-with-design-recipes--captioned.pdf)
+
 ## Workshop
 
 ## IMPORTANT
