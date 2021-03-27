@@ -36,7 +36,7 @@
 
 ## IMPORTANT
 
-**The _main_ branch may suffer changes. Likely, you will need to performe `git pull -r`. We let you know it during the workshop**
+- **The ``main` branch may suffer changes after publication day, until just before the beginning of the workshop. In that case, you will havo to perform a `git pull -r`. We let you know about this at the beginning of the workshop.**
 
 ### Prerequisites
 
@@ -110,22 +110,21 @@ Finally, every transaction has to be record into the contactless card.
 
 #### Some considerations:
 
-For the shake of simplicity:
-- The unity of money is an integer.
-- The transaction records only have an amount.
-
+For the sake of simplicity:
+- Money amounts are represented as integers.
+- the Transaction record can only have one amount per transaction.
 
 ---
 
-As a guideness, some of the usecases could be:
+Possible use cases include:
 
-- [ ] The user has to pay 10, and its card balance is 100 then the payment is accomplished. Then the card has a new record with -10 and the balance is 90.
+- [ ] If the user has to pay 10, and his/her card balance is 100, then the payment is accomplished. Then, the card has a new record with -10 and the balance is 90.
 
-- [ ] The user has to pay 20, and its card balance is 10 then the payment is not accomplished. There is neither new record nor the balance changed. 
+- [ ] If the user has to pay 20, and his/her card balance is 10, then the payment is not accomplished. There is neither a new record nor a balance change. 
 
 <!--- The new requirement it's hidden on purpose 
 
-- [ ] The user has to pay 27, and its card balance is 20 with and overdraft amount of 10 then the payment is accomplished. Then the card has a new record with -27 and the balance is -7.
+- [ ] If the user has to pay 27, and his/her card balance is 20 with a possible overdraft of 10, then the payment is accomplished. Then, the card has a new record with -27 and the balance is -7.
 
 -->
 
