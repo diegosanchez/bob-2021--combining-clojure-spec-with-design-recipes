@@ -113,6 +113,7 @@ Finally, every transaction has to be record into the contactless card.
 For the sake of simplicity:
 - Money amounts are represented as integers.
 - the Transaction record can only have one amount per transaction.
+- we have published a plausible solution (definitely, not the only possible one!) on branch`solution/aPossibleOne`.
 
 ---
 
