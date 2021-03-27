@@ -12,6 +12,7 @@
   - [The Problem Statement](#the-problem-statement)
 - [Expected Results](#expected-results)
 - [Concepts to Explore](#concepts-to-explore)
+- [Misc](#misc)
 
 ## Agenda for the activity
 
