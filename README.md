@@ -13,6 +13,7 @@
 - [Expected Results](#expected-results)
 - [Concepts to Explore](#concepts-to-explore)
 - [Misc](#misc)
+- [License](#license)
 
 ## Agenda for the activity
 
@@ -160,3 +161,30 @@ Some common tasks below.
 [external-github-fork]: https://guides.github.com/activities/forking/
 [external-bob]: https://bobkonf.de/2021/sanchez-doctors.html
 [external-test-runner]: https://github.com/cognitect-labs/test-runner
+
+## License
+
+Copyright © 2021, Diego Sánchez and Leandro Doctors.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+Additional permission under GNU GPL version 3 section 7:
+
+If you modify this Program, or any covered work, by linking or combining
+it with Clojure (or a modified version of that library), containing parts
+covered under the same terms as Clojure (currently, the Eclipse Public
+License version 1.0), the licensors of this Program grant you additional
+permission to convey the resulting work. Corresponding Source for a
+non-source form of such a combination shall include the source code for
+the parts of Clojure used as well as that of the covered work.
